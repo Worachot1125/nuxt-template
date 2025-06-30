@@ -15,9 +15,7 @@ export const useActivities = () => {
     try {
       const res = await service.activities.fetchActivities(query.value);
       console.log("Full API Response Data:", res.data);
-
       const fetchedData = res.data.data;
-
       activities.value = fetchedData.map((item) => ({
         id: item.id,
         name: item.name,
