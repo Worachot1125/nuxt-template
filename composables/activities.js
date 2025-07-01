@@ -8,7 +8,7 @@ export const useActivities = () => {
   });
 
   const activities = ref([]);
-  const isLoading = ref(false); // ✅ เพิ่ม state loading
+  const isLoading = ref(false);
 
   const fetchActivities = async () => {
     isLoading.value = true;
@@ -21,7 +21,6 @@ export const useActivities = () => {
         name: item.name,
         description: item.description,
       }));
-
       console.log("activities updated:", activities.value);
     } catch (err) {
       console.error("Error fetching activities:", err);
